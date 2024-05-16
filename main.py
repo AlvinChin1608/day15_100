@@ -38,12 +38,12 @@ def has_enough_resources(MENU, resources, user_choice):
             return False  # Not enough resources, exit early
     return True  # Enough resources for the drinks
 
-
+# put the or 0, so enter will be treated as zero
 def process_coins():
-    user_quarter = int(input("How many quarters?: ")) * COINS["quarter"]
-    user_dimes = int(input("How many dimes?: ")) * COINS["dimes"]
-    user_nickles = int(input("How many nickles?: ")) * COINS["nickles"]
-    user_pennies = int(input("How many pennies?: ")) * COINS["pennies"]
+    user_quarter = int(input("How many quarters?: ")or 0) * COINS["quarter"]
+    user_dimes = int(input("How many dimes?: ")or 0) * COINS["dimes"]
+    user_nickles = int(input("How many nickles?: ")or 0) * COINS["nickles"]
+    user_pennies = int(input("How many pennies?: ")or 0) * COINS["pennies"]
     total_inserted = user_quarter + user_dimes + user_nickles + user_pennies
     print(f"You have inserted ${total_inserted}")
     return total_inserted
